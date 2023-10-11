@@ -23,7 +23,6 @@ class PostsController < ApplicationController
     the_post.body = params.fetch("query_body")
     the_post.expires_on = params.fetch("query_expires_on")
     the_post.board_id = params.fetch("query_board_id")
-    pp the_post.valid?
     if the_post.valid?
       the_post.save
       redirect_to("/boards/#{the_post.board_id}", { :notice => "Post created successfully." })
