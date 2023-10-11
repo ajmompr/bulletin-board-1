@@ -50,7 +50,7 @@
         Expires on
       </th>
     </tr>
-    <% @the_board.posts.each do |a_post|%>
+    <% @the_board.posts.order({ :expires_on => :asc}).each do |a_post|%>
       <% if a_post.expires_on >= Date.today %>
     <tr>
       <td> 
@@ -89,7 +89,7 @@
       </th>
     </tr>
 
-    <% @the_board.posts.each do |a_post|%>
+    <% @the_board.posts.order({ :expires_on => :desc}).each do |a_post|%>
       <% if a_post.expires_on < Date.today %>
     <tr>
       <td> <%= a_post.title %> </td>
