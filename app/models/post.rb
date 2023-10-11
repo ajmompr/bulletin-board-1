@@ -12,4 +12,7 @@
 #  board_id   :integer
 #
 class Post < ApplicationRecord
+  validates(:body, { :presence => true })
+  validates(:title, { :presence => true})
+  validates(:expires_on, { :presence => true})
 end
